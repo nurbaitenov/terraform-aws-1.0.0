@@ -1,3 +1,7 @@
+### Instructions how to create RDS Instance and modulize it
+
+## Copy paste below code 
+```
 module rds {
     source = "../"
     region = "us-east-1"
@@ -8,4 +12,11 @@ module rds {
     instance_class       = "db.t3.micro"
     username             = "foo"
     publicly_accessible = true
+}
+```
+
+## If you want the output 
+```
+output endpoint {
+    value = module.rds.endpoint
 }
